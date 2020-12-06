@@ -181,7 +181,7 @@ class PieChart {
             .attr("class", "mydots")
             .merge(dots)
             .attr("cx", vis.width/1.25)
-            .attr("cy", function(d,i){ return 50 + i*25}) // 100 is where the first dot appears. 25 is the distance between dots
+            .attr("cy", function(d,i){ return vis.height/4 + i*25}) // 100 is where the first dot appears. 25 is the distance between dots
             .attr("r", 7)
             .style("fill", d => d.color)
 
@@ -197,7 +197,7 @@ class PieChart {
             .merge(dotLabels)
             .text(function(d){ return d.country})
             .attr("x", vis.width/1.2)
-            .attr("y", function(d,i){ return 50 + i*25}) // 100 is where the first dot appears. 25 is the distance between dots
+            .attr("y", function(d,i){ return vis.height/4 + i*25}) // 100 is where the first dot appears. 25 is the distance between dots
             .attr("text-anchor", "left")
             .style("alignment-baseline", "middle")
 

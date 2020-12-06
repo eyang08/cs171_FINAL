@@ -1,7 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="6c213c06-278c-4e6c-90d7-d62ffcdef7c9" name="Default Changelist" comment="Small mispellings" />
+    <list default="true" id="6c213c06-278c-4e6c-90d7-d62ffcdef7c9" name="Default Changelist" comment="Small mispellings">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -28,7 +49,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1607283466337</updated>
-      <workItem from="1607283468113" duration="968000" />
+      <workItem from="1607283468113" duration="1843000" />
     </task>
     <task id="LOCAL-00001" summary="Small mispellings">
       <created>1607284483817</created>
@@ -37,7 +58,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607284483818</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Small mispellings">
+      <created>1607284657828</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1607284657828</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -57,5 +85,11 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Small mispellings" />
     <option name="LAST_COMMIT_MESSAGE" value="Small mispellings" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1820" y="155" key="Vcs.Push.Dialog.v2" timestamp="1607284660714">
+      <screen x="1440" y="25" width="1920" height="1055" />
+    </state>
+    <state x="1820" y="155" key="Vcs.Push.Dialog.v2/0.25.1440.811/1440.25.1920.1055@1440.25.1920.1055" timestamp="1607284660714" />
   </component>
 </project>

@@ -138,9 +138,7 @@ class PieChart {
         arcs.enter()
             .append("path")
             .merge(arcs)
-            .attr("d", vis.arc)
             .attr("class", "arc")
-            .style("fill", d => d.data.color)
             .on('mouseover', function(event, d){
                 d3.select(this)
                     .attr('stroke-width', '2px')
@@ -167,7 +165,10 @@ class PieChart {
                     .style("left", 0)
                     .style("top", 0)
                     .html(``);
-            });
+            })
+            .transition(200)
+            .attr("d", vis.arc)
+            .style("fill", d => d.data.color);
 
         arcs.exit().remove();
 

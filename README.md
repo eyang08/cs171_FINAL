@@ -4,7 +4,7 @@ Our project explores wine consumption worldwide, different chemical attributes o
 
 Final site: https://eyang08.github.io/cs171_FINAL/
 
-Final video walkthrough: 
+Final video walkthrough: https://youtu.be/E6DCxKftSq4
 
 Code in /css, /js, and index.html
 

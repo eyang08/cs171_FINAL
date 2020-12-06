@@ -21,16 +21,59 @@ class RadarVis {
     vis.w = $(vis.parentElement).width() -200;
     vis.h = $(vis.parentElement).width() -200;
 
+      vis.color = d3.scaleOrdinal(d3.schemeReds[6]);
+
+      if (vis.data == whiteWine){
+          vis.color = d3.scaleOrdinal(d3.schemeGreens[6]);
+      }
+
+    // Add legend
     vis.legendheight = $(vis.legendElement).height();
     vis.legendwidth = $(vis.legendElement).width();
 
     console.log(vis.legendElement)
+      vis.legend =[3,4,5,6,7,8];
 
     vis.legendSvg = d3.select(vis.legendElement)
         .append("svg")
         .attr('class', 'legend')
         .attr("width", vis.legendwidth)
         .attr("height", vis.legendheight)
+
+      vis.key = vis.legendSvg.selectAll(".legend")
+          .data(vis.legend);
+
+      vis.keylabels = vis.legendSvg.selectAll(".legendtext")
+          .data(vis.legend);
+
+      vis.key.enter()
+          .append( "g")
+          .append("rect")
+          .attr("class", "legend")
+          .attr("fill", function(d, i) {
+              return vis.color(i)
+          })
+          .attr("x", function(d, i) {
+              return i * vis.legendwidth/8 + 10;
+          } )
+          .attr("y", 0)
+          .attr("height", 10)
+          .attr("width", vis.legendwidth/8 );
+
+
+      vis.keylabels.enter()
+          .append("g")
+          .append("text")
+          .attr("class", "legend-text")
+          .style("fill", "white")
+          .text(d =>{
+                  return d
+              }
+          )
+          .attr('y', 30)
+          .attr("x", function(d, i) {
+              return i * vis.legendwidth/8 + 10 +5;
+          } );
 
 
 
@@ -60,31 +103,25 @@ wrangleData(){
   vis.wines8 = vis.data.filter((wine => wine.quality == 8));
 
     vis.wines = [];
-    vis.legend =[];
+
 
     if (document.getElementById("quality3").checked == true){
         vis.wines.push(vis.wines3)
-        vis.legend.push(3)
     }
     if (document.getElementById("quality4").checked == true){
         vis.wines.push(vis.wines4)
-        vis.legend.push(4)
     }
     if (document.getElementById("quality5").checked == true){
         vis.wines.push(vis.wines5)
-        vis.legend.push(5)
     }
     if (document.getElementById("quality6").checked == true){
         vis.wines.push(vis.wines6)
-        vis.legend.push(6)
     }
     if (document.getElementById("quality7").checked == true){
         vis.wines.push(vis.wines7)
-        vis.legend.push(7)
     }
     if (document.getElementById("quality8").checked == true){
         vis.wines.push(vis.wines8)
-        vis.legend.push(8)
     }
 
   vis.qualityData =[];
@@ -172,12 +209,6 @@ wrangleData(){
 updateVis () {
   let vis = this;
 
-  vis.color = d3.scaleOrdinal(d3.schemeReds[6]);
-
-  if (vis.data == whiteWine){
-      vis.color = d3.scaleOrdinal(d3.schemeGreens[6]);
-  }
-
   vis.mycfg = {
     w: vis.w,
     h: vis.h,
@@ -190,48 +221,6 @@ updateVis () {
 
   //Call function to draw the Radar chart
   RadarChart.draw(vis.parentElement, vis.finalData, vis.mycfg);
-
-  //Add in the legend
-
-
-
-    vis.key = vis.legendSvg.selectAll(".legend")
-        .data(vis.legend);
-
-    vis.keylabels = vis.legendSvg.selectAll(".legendtext")
-        .data(vis.legend);
-
-    vis.key.enter()
-        .append( "g")
-        .append("rect")
-        .attr("class", "legend")
-        .merge(vis.key)
-        .attr("fill", function(d, i) {
-            return vis.color(i)
-        })
-        .attr("x", function(d, i) {
-            return i * vis.legendwidth/8 + 10;
-        } )
-        .attr("y", 0)
-        .attr("height", 10)
-        .attr("width", vis.legendwidth/8 );
-
-    vis.key.exit().remove();
-
-    vis.keylabels.exit().remove();
-    vis.keylabels.enter()
-        .append("g")
-        .append("text")
-        .attr("class", "legend-text")
-        .style("fill", "white")
-        .text(d =>{
-            return d
-        }
-            )
-        .attr('y', 30)
-        .attr("x", function(d, i) {
-        return i * vis.legendwidth/8 + 10 +5;
-    } );
 
 
 
